@@ -1,16 +1,19 @@
-import React from "react";
-import LoginForm from "./src/components/LoginForm";
-import { StyleSheet, View } from "react-native";
-import Saludar from "./src/components/Saludar";
-import { NativeBaseProvider, Box, Text } from "native-base";
+import * as React from "react";
+import { NativeBaseProvider } from "native-base";
+import { NavigationContainer } from "@react-navigation/native";
+
+import RouterStack from "./src/routers/RouterStack";
+import RouterDrawer from "./src/routers/RouterDrawer";
+import RouterTab from "./src/routers/RouterTab";
 
 const App = () => {
   return (
     <NativeBaseProvider>
-      <Box flex={1} bg="#fff" alignItems="center" justifyContent="center">
-        <LoginForm />
-        <Saludar firstname="juan" lastname="garcia" />
-      </Box>
+      <NavigationContainer>
+        <RouterDrawer />
+        {/* <RouterTab /> */}
+        {/* <RouterStack /> */}
+      </NavigationContainer>
     </NativeBaseProvider>
   );
 };
